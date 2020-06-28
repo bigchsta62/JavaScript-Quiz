@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="start"> Start Quiz! </div>
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div id="question-container" class="display-4 hide">
+                <div id="question">question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button type="button" class="btn btn-secondary">Answer 1</button>
+                    <button type="button" class="btn btn-secondary">Answer 2</button>
+                    <button type="button" class="btn btn-secondary">Answer 3</button>
+                    <button type="button" class="btn btn-secondary">Answer 4</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button type="button" id="start-btn" class="start btn btn-info">Start</button>
+                <button type="button" id="next-btn" class="next btn btn-info hide">Next</button>
+            </div>
+            <!-- <p class="btn-default" id="ansBtn"></p> -->
+
+        </div>
 
 
+    </main>
+    <!-- GIVEN I am taking a code quiz -->
+
+    <!-- WHEN I click the start button -->
+
+    <!-- THEN a timer starts and I am presented with a question -->
+    <!-- WHEN I answer a question -->
+    <!-- THEN I am presented with another question -->
+    <!-- WHEN I answer a question incorrectly -->
+    <!-- THEN time is subtracted from the clock -->
+    <!-- WHEN all questions are answered or the timer reaches 0 -->
+    <!-- THEN the game is over -->
+    <!-- WHEN the game is over -->
+    <!-- THEN I can save my initials and score -->
 
 
 
@@ -25,5 +60,15 @@
 
 
     <script src="quiz.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
