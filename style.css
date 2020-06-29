@@ -9,7 +9,7 @@
 
 }
 :root {
-    --hue-neutral: 200;
+    --hue-neutral: 600;
     --hue-wrong: 0;
     --hue-correct: 145;
 }
@@ -17,17 +17,19 @@
 
 body {
     --hue: var(--hue-neutral);
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: hsl(var(--hue), 3%, 67%);
     justify-content: center;
     align-items: center;
 }
 
 body.correct {
     --hue: var(--hue-correct);
+    background-color: hsl(var(--hue), 100%, 20%);
 }
 
 body.wrong {
     --hue: var(--hue-wrong);
+    background-color: hsl(var(--hue), 100%, 20%);
 }
 
 .jumbotron {
@@ -51,13 +53,15 @@ body.wrong {
     padding: 5px 10px;
 }
 
-.btn.correct {
+/* .btn.correct {
+    background-color:green;
     color: greenyellow ;
 }
 
 .btn.wrong {
+    background-color: black;
     color: firebrick;
-}
+} */
 .start, .next {
     font-size: 2rem;
     font-weight: bold;

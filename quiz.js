@@ -6,13 +6,18 @@ const aBtnsElement = document.getElementById('answer-buttons');
 
 
 let shuffledQs, currentQs
+let countRightAns = 0;
 
 startButton.addEventListener('click', startGame);
-
+nextButton.addEventListener('click', () => {
+    currentQs++;
+    nextQuestion()
+})
 
 
 function startGame() {
-    console.log('startGame works');
+    // console.log('startGame works');
+    countRightAns = 0;
     startButton.classList.add('hide');
     shuffledQs = questions.sort(() => Math.random() - .5);
     currentQs = 0
@@ -21,6 +26,7 @@ function startGame() {
 }
 
 function nextQuestion() {
+    resetJumbo()
     showQ(shuffledQs[currentQs]);
 }
 
@@ -33,13 +39,53 @@ function showQ(question) {
     if (answer.correct) {
         button.dataset.correct = answer.correct;
     }
-    button.addEventListener('click', selectAnswer)
+    button.addEventListener('click', answerPick)
     aBtnsElement.appendChild(button);
 })
 }
 
-function selectAnswer(e) {
+function resetJumbo() {
+    resetRW(document.body);
+    nextButton.classList.add('hide');
+    while (aBtnsElement.firstChild){
+        aBtnsElement.removeChild
+        (aBtnsElement.firstChild)
+    }
+}
 
+function answerPick(e) {
+    const clickedBtn = e.target;
+    const correct = clickedBtn.dataset.correct;
+    rightOrWrong(document.body, correct);
+    Array.from(aBtnsElement.children).forEach(button => {
+        rightOrWrong(button, button.dataset.correct);
+    });
+    if (shuffledQs.length > currentQs + 1) {
+        nextButton.classList.remove('hide');    
+    } else {
+        startButton.innerText = 'Game Over';
+        startButton.classList.remove('hide');
+    }
+    if (clickedBtn.dataset = correct) {
+        countRightAns++;
+     // +1, change it if you need +10, +25 etc
+     }
+     document.getElementById('right-answers').innerHTML = countRightAns;
+    
+}
+
+function rightOrWrong(element, correct) {
+    resetRW(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
+}
+
+function resetRW(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 const questions = [
@@ -49,7 +95,37 @@ const questions = [
             { text: '4', correct: true },
             {text: '22', correct: false }
         ]
-    }
+    },
+    
+    {
+        question: 'What is 2+2?',
+        answers: [
+            { text: '4', correct: true },
+            {text: '22', correct: false }
+        ]
+    },
+    {
+        question: 'What is 2+2?',
+        answers: [
+            { text: '4', correct: true },
+            {text: '22', correct: false }
+        ]
+    },
+    {
+        question: 'What is 2+2?',
+        answers: [
+            { text: '4', correct: true },
+            {text: '22', correct: false }
+        ]
+    },
+    {
+        question: 'What is 2+2?',
+        answers: [
+            { text: '4', correct: true },
+            {text: '22', correct: false }
+        ]
+    },
+
 ]
 
 
