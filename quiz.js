@@ -33,23 +33,23 @@ function nextQuestion() {
 function showQ(question) {
     qElement.innerText = question.question
     question.answers.forEach(answer => {
-    const button = document.createElement('button');
-    button.innerText = answer.text
-    button.classList.add('btn', 'btn-outline-secondary');
-    if (answer.correct) {
-        button.dataset.correct = answer.correct;
-    }
-    button.addEventListener('click', answerPick)
-    aBtnsElement.appendChild(button);
-})
+        const button = document.createElement('button');
+        button.innerText = answer.text
+        button.classList.add('btn', 'btn-outline-secondary');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', answerPick)
+        aBtnsElement.appendChild(button);
+    })
 }
 
 function resetJumbo() {
     resetRW(document.body);
     nextButton.classList.add('hide');
-    while (aBtnsElement.firstChild){
+    while (aBtnsElement.firstChild) {
         aBtnsElement.removeChild
-        (aBtnsElement.firstChild)
+            (aBtnsElement.firstChild)
     }
 }
 
@@ -61,17 +61,17 @@ function answerPick(e) {
         rightOrWrong(button, button.dataset.correct);
     });
     if (shuffledQs.length > currentQs + 1) {
-        nextButton.classList.remove('hide');    
+        nextButton.classList.remove('hide');
     } else {
         startButton.innerText = 'Game Over';
         startButton.classList.remove('hide');
     }
-    if (clickedBtn.dataset = correct) {
-        countRightAns++;
-     // +1, change it if you need +10, +25 etc
-     }
-     document.getElementById('right-answers').innerHTML = countRightAns;
-    
+    // if (clickedBtn.dataset = correct) {
+    //     countRightAns++;
+    //  // +1, change it if you need +10, +25 etc
+    //  }
+    //  document.getElementById('right-answers').innerHTML = countRightAns;
+
 }
 
 function rightOrWrong(element, correct) {
@@ -90,39 +90,45 @@ function resetRW(element) {
 
 const questions = [
     {
-        question: 'What is 2+2?',
+        question: 'JavaScript ("JS" for short) is a full-fledged ______________ that can add interactivity to a website.',
         answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
+            { text: 'rabbit hole of information', correct: false },
+            { text: 'dynamic programming language', correct: true },
+            { text: 'interdimensional portal', correct: false },
+            { text: 'box', correct: false }
         ]
     },
-    
+
     {
-        question: 'What is 2+2?',
+        question: 'Who invented JvaScript?',
         answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
-        ]
-    },
-    {
-        question: 'What is 2+2?',
-        answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
+            { text: 'Bill Gates', correct: false },
+            { text: 'Joey Tribbiani', correct: false },
+            { text: 'Brendan Eich', correct: true },
+            { text: 'Post Malone', correct: false }
         ]
     },
     {
-        question: 'What is 2+2?',
+        question: 'JavaScript first debuted in the AOL Instant Messenger service.',
         answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
+            { text: 'False', correct: true },
+            { text: 'True', correct: false }
         ]
     },
     {
-        question: 'What is 2+2?',
+        question: 'Conditionals are code structures used to test if an expression returns true or not. A very common form of conditionals is the if ... else statement.',
         answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
+            { text: 'True', correct: true },
+            { text: 'False', correct: false }
+        ]
+    },
+    {
+        question: 'Which of the follwing would link an HTML page to Javascrip',
+        answers: [
+            { text: 'put that Java over here', correct: false },
+            { text: '<link rel="stylesheet" href="style.css">', correct: false },
+            { text: '<p id="right-answers"></p>', correct: false },
+            { text: '<script src="javaScript.js"></script>', correct: true }
         ]
     },
 
@@ -136,7 +142,7 @@ const questions = [
 
 // // for (let i = 0; i < array.length; i++) {
 // //     const element = array[i];
-    
+
 // // }
 
 
@@ -149,7 +155,7 @@ const questions = [
 //     const answerBtn = document.createElement('BUTTON');
 //     answerBtn.setAttribute('choices', answers[i]);
 //     document.getElementById('ansBtns').appendChild(answerBtn);
-    
+
 // }
 
 
