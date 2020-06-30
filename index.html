@@ -16,7 +16,7 @@
         <div id="game" class="justify-center flex-column hidden">
             <div id="hud">
                 <div id="hud-item">
-
+                    <button type="button" class="start btn btn-info btn-lrg" onclick="window.location='scores.html'">High Scores</button>
                     <div id="progressBar">
                         <div id="progressBarFull"></div>
                     </div>
@@ -43,14 +43,13 @@
                         <button class="btn btn-outline-secondary">Answer 3</button>
                         <button class="btn btn-outline-secondary">Answer 4</button>
                     </div>
-                    <div id="countdown"></div>
+                    <div id="countdown">60 seconds remaining</div>
                 </div>
                 <div class="controls">
                     <p id="right-answers"></p>
                     <button type="button" id="start-btn" class="start btn btn-info btn-lrg">Start</button>
                     <button type="button" id="next-btn" class="next btn btn-info hide btn-lrg">Next</button>
-                    <a href="scores.html" type="button" id="high-scores-btn" class="high btn btn-info hide btn-lrg">High
-                        Scores</a>
+
                 </div>
             </div>
         </main>
@@ -92,7 +91,7 @@
 
 
 
-<script src="scores.js"></script>
+
 <script src="quiz.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

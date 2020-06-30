@@ -12,61 +12,39 @@
 
 <body>
     <div class="container">
-        <div id="loader"></div>
-        <div id="game" class="justify-center flex-column hidden">
-            <div id="hud">
-                <div id="hud-item">
-
-                    <div id="progressBar">
-                        <div id="progressBarFull"></div>
-                    </div>
-                </div>
-                <div id="hud-item">
-                    <p class="hud-prefix">
-                        Score
-                    </p>
-                    <h1 class="hud-main-text" id="lastScore">
-                        55
-                    </h1>
-                </div>
-            </div>
+        <div id="topFivesScores" class="flex-center flex-column">
+            <h1 id="topList">High Scores</h1>
+            <ul id="topFiveList"></ul>
         </div>
+    </div>
 
+    <div class="jumbotron" id="scores">
+        <div class="container">
+            <h1 id="finalScore">0</h1>
+            <form class="form-inline">
+                <input type="text"  placeholder="username" id="username" </form>
+                <button type="submit" class="btn btn-secondary mr-1" id="saveScoreBtn" onclick="saveScore(event)">
+                    Save
+                </button>
+                
+                <a href="index.html" type="button" class="btn btn-secondary mr-1">
+                    Home
+                </a>
 
-
-
-        <div class="jumbotron jumbotron-fluid " id="scores">
-            <div class="container">
-                <h1 id="finalScore">0</h1>
-                <form class="form-inline">
-                    <input type="text" name="username" placeholder="username" id="username"</form>
-
-
-                    <button type="submit" class="btn btn-secondary mr-1" id="saveScoreBtn" onclick="saveScore(event)">
-                        Save
-                    </button>
-
-                    <button class="btn btn-secondary mr-1" id="scoreBtn2">High Scores</button>
-                    <a href="/">
-                        <button class="btn btn-secondary mr-1">
-                            Home
-                        </button>
-                    </a>
-
-                </form>
-            </div>
+            </form>
         </div>
-        <script src="quiz.js"></script>
-        <script src="scores.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
+    </div>
+
+    <script src="scores.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
