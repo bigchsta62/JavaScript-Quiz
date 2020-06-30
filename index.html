@@ -11,66 +11,98 @@
 </head>
 
 <body>
-    <main>
-        <div class="jumbotron jumbotron-fluid">
-            <div id="question-container" class=" hide">
-                <h1 id="question">question</h1>
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn btn-outline-secondary">Answer 1</button>
-                    <button class="btn btn-outline-secondary">Answer 2</button>
-                    <button class="btn btn-outline-secondary">Answer 3</button>
-                    <button class="btn btn-outline-secondary">Answer 4</button>
+    <div class="container">
+        <div id="loader"></div>
+        <div id="game" class="justify-center flex-column hidden">
+            <div id="hud">
+                <div id="hud-item">
+
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+                <div id="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
                 </div>
             </div>
-            <div class="controls">
-                <p id="right-answers"></p>
-                <button type="button" id="start-btn" class="start btn btn-info btn-lrg">Start</button>
-                <button type="button" id="next-btn" class="next btn btn-info hide btn-lrg">Next</button>
-            </div>
-            
-
         </div>
 
 
-    </main>
-    
-    <!-- GIVEN I am taking a code quiz -->
-
-    <!-- WHEN I click the start button -->
-
-    <!-- THEN a timer starts and I am presented with a question -->
-    <!-- WHEN I answer a question -->
-    <!-- THEN I am presented with another question -->
-    <!-- WHEN I answer a question incorrectly -->
-    <!-- THEN time is subtracted from the clock -->
-    <!-- WHEN all questions are answered or the timer reaches 0 -->
-    <!-- THEN the game is over -->
-    <!-- WHEN the game is over -->
-    <!-- THEN I can save my initials and score -->
-
-
-
-
-
-
-
-
+        <main>
+            <div class="jumbotron jumbotron-fluid" id="main">
+                <div id="question-container" class="hide">
+                    <h1 id="question">question</h1>
+                    <div id="answer-buttons" class="btn-grid">
+                        <button class="btn btn-outline-secondary">Answer 1</button>
+                        <button class="btn btn-outline-secondary">Answer 2</button>
+                        <button class="btn btn-outline-secondary">Answer 3</button>
+                        <button class="btn btn-outline-secondary">Answer 4</button>
+                    </div>
+                    <div id="countdown"></div>
+                </div>
+                <div class="controls">
+                    <p id="right-answers"></p>
+                    <button type="button" id="start-btn" class="start btn btn-info btn-lrg">Start</button>
+                    <button type="button" id="next-btn" class="next btn btn-info hide btn-lrg">Next</button>
+                    <a href="scores.html" type="button" id="high-scores-btn" class="high btn btn-info hide btn-lrg">High
+                        Scores</a>
+                </div>
+            </div>
+        </main>
 
 
 
+</body>
+
+</html>
 
 
 
-    <script src="quiz.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+
+
+<!-- GIVEN I am taking a code quiz -->
+
+
+<!-- WHEN I click the start button -->
+
+<!-- THEN a timer starts and I am presented with a question -->
+<!-- WHEN I answer a question -->
+<!-- THEN I am presented with another question -->
+<!-- WHEN I answer a question incorrectly -->
+<!-- THEN time is subtracted from the clock -->
+<!-- WHEN all questions are answered or the timer reaches 0 -->
+<!-- THEN the game is over -->
+<!-- WHEN the game is over -->
+<!-- THEN I can save my initials and score -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="scores.js"></script>
+<script src="quiz.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

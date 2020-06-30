@@ -1,12 +1,16 @@
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
+const highScoresBtn = document.getElementById('high-scores-btn');
 const qContainer = document.getElementById('question-container');
 const qElement = document.getElementById('question')
 const aBtnsElement = document.getElementById('answer-buttons');
 
+const scoreText = document.getElementById('score');
+const correctPoints = 10;
 
 let shuffledQs, currentQs;
-let countRightAns = 0;
+let score = 0;
+
 
 startButton.addEventListener('click', () => {
     startGame();
@@ -14,13 +18,14 @@ startButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     currentQs++;
     nextQuestion();
-    setInterval();
+    
 });
 
 // starts the Quiz
 function startGame() {
     // console.log('startGame works');
-
+    
+    score = 0;
     startButton.classList.add('hide');
     shuffledQs = questions.sort(() => Math.random() - .5);
     currentQs = 0
@@ -67,8 +72,8 @@ const downloadTimer = setInterval(function () {
         clearInterval(downloadTimer);
         document.getElementById("countdown").innerHTML = "Out of Time!";
         qContainer.classList.add('hide');
-        startButton.innerText = 'Try Again';
-        startButton.classList.remove('hide');
+        highScoresBtn.classList.remove('hide');
+        
 
     } else {
         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
@@ -89,10 +94,10 @@ function answerPick(e) {
     if (shuffledQs.length > currentQs + 1) {
         nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = 'High Scores';
-        startButton.classList.remove('hide');
+        const aTag = document.createElement('a');
+        startButton.innerText = '';
         qContainer.classList.add('hide');
-        clearTimeout(downloadTimer);
+        highScoresBtn.classList.remove('hide');
     };
 };
 
@@ -103,7 +108,7 @@ function rightOrWrong(element, correct) {
     resetRW(element);
     if (correct) {
         element.classList.add('correct');
-        aBtnsElement.disabled = true;
+        incrementScore(correctPoints);
     } else {
         element.classList.add('wrong');
 
@@ -161,7 +166,38 @@ const questions = [
 
 ]
 
+incrementScore = (num) => {
+    score += num;
+    scoreText.innerText = score;
+};
 
 
 
+const username = document.getElementById('username');
+const saveScoreBtn = document.getElementById('saveScoreBtn');
+const finalScore = document.getElementById('finalScore');
+const lastScore = localStorage.getItem('lastScore');
 
+
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+console.log(highScores);
+console.log(JSON.parse(localStorage.getItem('highScores')));
+finalScore.innerText = lastScore;
+
+username.addEventListener('keyup', () => {
+    console.log(username.value);
+    saveScoreBtn.disabled = !username.value;
+});
+
+saveScore = e => {
+    console.log('clicked save btn');
+    event.preventDefault();
+
+
+    const score = {
+        score: lastScore,
+        name: username.value
+    };
+    console.log(score);
+};
