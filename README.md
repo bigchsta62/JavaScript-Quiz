@@ -15,3 +15,4 @@ When all questions have been answered or the time runs out, you are redirected t
 
 There you can save your name and score if it is in the top five(This function is incomplete)
 
+https://bigchsta62.github.io/JavaScript-Quiz/
