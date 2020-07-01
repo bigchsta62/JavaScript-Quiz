@@ -5,18 +5,17 @@ const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const lastScore = localStorage.getItem('lastScore');
 const topFiveList = document.getElementById('topFiveList');
-const highScores = JSON.parse(localStorage.getItem('highScores'));
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 
 //I havent been able to get this code to completely work. Score is not selected
 //and it returns the values incorrectly onto the page
-topFiveList.innerHTML = highScores
-.map(score => {
-   return '<li class="high-score">${score.name}-${score.score}</li>'
+topFiveList.innerHTML = highScores.map(score => {
+   return `<li class="high-score">${score.name}-${score.score}</li>`
 }).join('')
 
 
-console.log('highScores');
+
 
 
 
