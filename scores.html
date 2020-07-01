@@ -11,22 +11,22 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <div id="topFivesScores" class="flex-center flex-column">
-            <h1 id="topList">High Scores</h1>
-            <ol id="topFiveList"></ol>
-        </div>
-    </div>
 
-    <div class="jumbotron" id="scores">
+    <div class="jumbotron jumbotron-fluid" id="scores">
         <div class="container">
+            <div class="card justify-content-center">
+                <div id="topFivesScores">
+                    <h1 id="topList">High Scores</h1>
+                    <ol id="topFiveList"></ol>
+                </div>
+            </div>
             <h1 id="finalScore">0</h1>
-            <form class="form-inline">
-                <input type="text"  placeholder="username" id="username" </form>
+            <form class="form-group">
+                <input type="text" placeholder="username" id="username" </form>
                 <button type="submit" class="btn btn-secondary mr-1" id="saveScoreBtn" onclick="saveScore(event)">
                     Save
                 </button>
-                
+
                 <a href="index.html" type="button" class="btn btn-secondary mr-1">
                     Home
                 </a>
